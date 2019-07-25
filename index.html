@@ -1,0 +1,76 @@
+<!-- A pass the message project with vanilla js built on 25th july 2019 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pass the message</title>
+</head>
+<body>
+    <style>
+        body{
+            background: rgb(255, 255, 255);
+        }
+        .container{
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 4px 4px 120px rgba(168, 168, 168, 0.4);
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 30px;
+            
+        }
+
+        .btn{
+            background: rgb(235, 235, 235);
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 3px;
+            margin-top: 20px;
+            padding: 10px 50px;
+            font-size: 30px;
+        }
+
+        .input{
+            height: 40px;
+            width: 80%;
+            border: 2px solid rgb(221, 221, 221);
+            outline: none;
+            font-size: 30px;
+        }
+
+        .message{
+            color: #4285f4;
+            text-transform: capitalize;
+        }
+
+    </style>
+    <div class="container">
+        <h2>Type in your message below</h2>
+        <input placeholder="Your message here" class="input" type="text"><br>
+        <button class="btn">Send</button>
+        <h3>Last message delivered</h3>
+        <h2 class="message">Practice makes perfect</h2>
+    </div>
+    <script>
+        const input = document.querySelector('.input');
+        const btn = document.querySelector('.btn');
+        const message = document.querySelector('.message');
+
+        function showMessage(){
+            const values = input.value;
+            message.innerHTML = values;
+            let empty = '';
+            if(values === empty){
+                alert('please enter a valid value')
+            }
+            
+        }
+
+        btn.addEventListener('click', showMessage);
+    </script>
+</body>
+</html>
